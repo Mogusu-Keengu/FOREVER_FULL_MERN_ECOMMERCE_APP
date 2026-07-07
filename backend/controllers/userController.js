@@ -48,7 +48,7 @@ const registerUser = async (req,res) => {
         }
 
         // validating email format and password
-        if (!validator.isEmail(email)) {
+        if (!validator.isEmail(email.trim())) {
             return res.json({success:false, message:"Please enter a valid email"})
         }
         if (password.length<3) {
